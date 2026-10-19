@@ -1,0 +1,168 @@
+/* ===== Dark theme colors ===== */
+:root {
+  --bg: #121417;
+  --card: #1d2026;
+  --border: #2c313a;
+  --text: #e6e8eb;
+  --muted: #8b929c;
+  --accent: #4f8cff;
+  --success: #3fb97b;
+  --danger: #e5534b;
+  --warning: #e0a63a;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+  line-height: 1.5;
+  padding: 40px 16px;
+}
+
+.container {
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+.subtitle {
+  color: var(--muted);
+  margin-bottom: 24px;
+}
+
+/* ===== Form ===== */
+form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+input {
+  background: var(--card);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-size: 1rem;
+}
+
+#title-input {
+  flex: 1 1 220px;
+}
+
+input[type="date"] {
+  color-scheme: dark; /* makes the date picker dark too */
+}
+
+input:focus {
+  outline: 2px solid var(--accent);
+  border-color: transparent;
+}
+
+button {
+  border: none;
+  border-radius: 8px;
+  padding: 10px 16px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+form button {
+  background: var(--accent);
+  color: #fff;
+}
+
+form button:hover {
+  opacity: 0.9;
+}
+
+.summary {
+  color: var(--muted);
+  font-size: 0.9rem;
+  margin-bottom: 12px;
+}
+
+/* ===== Assignment list ===== */
+#assignment-list {
+  list-style: none;
+}
+
+.assignment {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 12px 14px;
+  margin-bottom: 8px;
+}
+
+.assignment input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--success);
+  cursor: pointer;
+}
+
+.info {
+  flex: 1;
+  min-width: 0;
+}
+
+.title {
+  word-wrap: break-word;
+}
+
+.due {
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.due.overdue {
+  color: var(--danger);
+}
+
+.due.soon {
+  color: var(--warning);
+}
+
+/* Completed assignments are faded and crossed out */
+.assignment.completed .title {
+  text-decoration: line-through;
+  color: var(--muted);
+}
+
+.assignment.completed .due {
+  color: var(--muted);
+}
+
+.delete-btn {
+  background: transparent;
+  color: var(--muted);
+  border: 1px solid var(--border);
+  padding: 6px 10px;
+  font-size: 0.85rem;
+}
+
+.delete-btn:hover {
+  color: #fff;
+  background: var(--danger);
+  border-color: var(--danger);
+}
+
+.empty {
+  color: var(--muted);
+  text-align: center;
+  padding: 24px 0;
+}
